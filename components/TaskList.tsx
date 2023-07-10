@@ -1,6 +1,6 @@
 import React from 'react'
 
-const AddTodo = () => {
+const TaskList = () => {
   return (
     <div>
       
@@ -8,4 +8,4 @@ const AddTodo = () => {
   )
 }
 
-export default AddTodo
+export default TaskList
