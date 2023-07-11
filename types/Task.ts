@@ -6,6 +6,7 @@ interface Task {
   title: string;
   description: string;
   status: string;
+  date?: any;
 }
 
 export default Task;
