@@ -61,8 +61,8 @@ const handleAddTask = () => {
         </div>
 
         <div className="flex justify-around w-full">
-          <button className='block p-1 m-auto text-xs bg-red-500 rounded-md w-fit hover:scale-110 hover:bg-red-700 hover:text-white' onClick={()=>setShow(false)}>close</button>
-          <button className='block p-1 m-auto text-xs bg-teal-500 rounded-md w-fit hover:scale-110 hover:bg-teal-700 hover:text-white' onClick={handleAddTask}>Add</button>
+          <button className='block p-1 m-auto text-sm bg-red-500 rounded-md w-fit hover:scale-110 hover:bg-red-600 hover:text-white' onClick={()=>setShow(false)}>close</button>
+          <button className='block p-1 m-auto text-sm bg-green-500 rounded-md w-fit hover:scale-110 hover:bg-green-600 hover:text-white' onClick={handleAddTask}>Add</button>
         </div>
       </form>
 

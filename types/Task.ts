@@ -2,7 +2,7 @@
 
 interface Task {
   // id is a string and it is optional
-  id?: string;
+  id?: any;
   title: string;
   description: string;
   status: string;
