@@ -24,6 +24,13 @@ const [active, setActive] = React.useState<string>('');
   }
 
   const handleDelete = () => {
+    // checking opened task
+    if(taskStore.task.id){
+      let isPresent = selectedTask.filter((id,i)=>id===taskStore.task.id)
+     if(isPresent){
+       taskStore.resetTask()
+     }
+    }
     taskStore.deleteTask(selectedTask);
     setSelectedTask([]);
   }
@@ -47,8 +54,10 @@ const [active, setActive] = React.useState<string>('');
          }
         </div>
       </div>
-      <div className='w-full h-[calc(100%-100px)] overflow-hidden overflow-y-auto '>
-     <table className='table w-full h-full '>
+      <div className='w-full h-[calc(100%-100px)] flex justify-center items-center overflow-hidden overflow-y-auto '>
+     {
+      taskStore.tasks.length>0?
+      <table className='table w-full h-full '>
       <tbody className='w-full max-h-[calc(100%-100px)] overflow-hidden overflow-y-auto bg-transparent'>
       {taskStore.tasks.map((task) => (
         <tr key={task.id} onClick={()=>{
@@ -65,7 +74,9 @@ const [active, setActive] = React.useState<string>('');
         </tr>
       ))}
       </tbody>
-    </table>
+    </table>:
+   <p>No Task Found</p>
+     }
       </div>
     
    </div>
