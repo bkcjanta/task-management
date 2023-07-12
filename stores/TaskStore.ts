@@ -95,7 +95,7 @@ const TaskStore = types
 // create a hook to use the store in components
 
 const taskStore = TaskStore.create({
-  tasks: JSON.parse(localStorage.getItem("tasks")||"[]"),
+  tasks: typeof localStorage !== 'undefined' ? JSON.parse(localStorage.getItem("tasks") || "[]") : [],
   task: {
     id: "",
     title: "",
